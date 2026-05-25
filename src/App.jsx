@@ -3,7 +3,9 @@
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
 import './App.css'
-import WelcomeMessage from './welcomMessage.jsx'
+import WelcomeMessage from './welcomeMessage.jsx'
+import Header from './header.jsx'
+import Footer from './footer.jsx'
 
 
 
@@ -12,13 +14,15 @@ function App() {
 
   return (
     <>
+    <Header />
     <div>
-      <WelcomeMessage />
+      
       <h1>Hello, Daniel's React App!</h1>
       <p>React is ready, let's go!</p>
       <p>let's get started!</p>
+      <WelcomeMessage />
     </div>
-    
+    <Footer />
     </>
   )
 }
