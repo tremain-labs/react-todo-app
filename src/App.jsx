@@ -7,6 +7,7 @@ import WelcomeMessage from './welcomeMessage.jsx'
 import Header from './header.jsx'
 import Footer from './footer.jsx'
 import UserCard from './UserCard.jsx'
+import Todo from './todo.jsx'
 
 
 function App() {
@@ -23,6 +24,11 @@ function App() {
       <WelcomeMessage />
       <UserCard name="Daniel" role="Developer" />
       <UserCard name="Heather" role="Loving Wife" />
+      <ol>
+        <Todo task="Finish React project" priority="High" completed={false} />
+        <Todo task="Get a job as a web developer" priority="High" completed={false} />
+      </ol>
+
     </div>
     <Footer />
     </>
