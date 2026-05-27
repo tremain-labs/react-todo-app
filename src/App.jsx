@@ -6,7 +6,7 @@ import './App.css'
 import WelcomeMessage from './welcomeMessage.jsx'
 import Header from './header.jsx'
 import Footer from './footer.jsx'
-
+import UserCard from './UserCard.jsx'
 
 
 function App() {
@@ -21,6 +21,8 @@ function App() {
       <p>React is ready, let's go!</p>
       <p>let's get started!</p>
       <WelcomeMessage />
+      <UserCard name="Daniel" role="Developer" />
+      <UserCard name="Heather" role="Loving Wife" />
     </div>
     <Footer />
     </>
