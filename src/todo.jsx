@@ -1,6 +1,6 @@
 function Todo({task, priority, completed}) {
   return (      
-        <li>{task} - Priority: {priority} - Completed: {completed ? "✅" : "⬜"}</li>
+        <li>{task} - Priority: {priority} - Completed Status: {completed ? "✅" : "⬜"}</li>
 
   );
 }
