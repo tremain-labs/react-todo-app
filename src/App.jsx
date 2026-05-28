@@ -8,7 +8,7 @@ import Header from './header.jsx'
 import Footer from './footer.jsx'
 import UserCard from './UserCard.jsx'
 import Todo from './todo.jsx'
-import Counter from './count.jsx'
+// import Counter from './count.jsx'
 
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
         <Todo task="Finish React project" priority="High" completed={false} />
         <Todo task="Get a job as a web developer" priority="High" completed={false} />
       </ol>
-      <Counter /> 
+      {/* <Counter />  */}
     </div>
     <Footer />
     </>
