@@ -12,12 +12,25 @@ import Todo from './todo.jsx'
 import { useState } from "react";
 
 function App() {
-  // const [count, setCount] = useState(0)
+  // the todo state 
 const [todos, setTodos] = useState([
   { id: 1, task: "Learn React", priority: "high", completed: false },
   { id: 2, task: "Touch Grass", priority: "low", completed: false },
-  { id: 3, task: "Learn React", priority: "high", completed: false }
+  { id: 3, task: "Learn React", priority: "high", completed: false },
+  { id: 4, task: "Eat", priority: "high", completed: false },
+  { id: 5, task: "Sleep", priority: "high", completed: false },
+  { id: 6, task: "Code", priority: "high", completed: false }
 ])
+
+// filtering the completed tasks
+const completedTasks = todos.filter(todo => todo.completed)
+
+function deleteTodo(id) {
+  setTodos(todos.filter(todo => todo.id !== id))
+}
+
+
+
   return (
     <>
     <Header />
@@ -32,7 +45,7 @@ const [todos, setTodos] = useState([
       
       <ol>
         {todos.map(todo => (
-          <Todo key={todo.id} {...todo} />
+          <Todo key={todo.id} {...todo} deleteTodo={deleteTodo} />
         ))}
       </ol>
       {/* <Counter />  */}
