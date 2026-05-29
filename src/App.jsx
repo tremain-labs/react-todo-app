@@ -14,12 +14,12 @@ import { useState } from "react";
 function App() {
   // the todo state 
 const [todos, setTodos] = useState([
-  { id: 1, task: "Learn React", priority: "high", completed: false },
-  { id: 2, task: "Touch Grass", priority: "low", completed: false },
-  { id: 3, task: "Learn React", priority: "high", completed: false },
-  { id: 4, task: "Eat", priority: "high", completed: false },
-  { id: 5, task: "Sleep", priority: "high", completed: false },
-  { id: 6, task: "Code", priority: "high", completed: false }
+  // { id: 1, task: "Learn React", priority: "high", completed: false },
+  // { id: 2, task: "Touch Grass", priority: "low", completed: false },
+  // { id: 3, task: "Learn React", priority: "high", completed: false },
+  // { id: 4, task: "Eat", priority: "high", completed: false },
+  // { id: 5, task: "Sleep", priority: "high", completed: false },
+  // { id: 6, task: "Code", priority: "high", completed: false }
 ])
 
 // filtering the completed tasks
@@ -42,12 +42,15 @@ function deleteTodo(id) {
       <WelcomeMessage />
       <UserCard name="Daniel" role="Developer" />
       <UserCard name="Heather" role="Loving Wife" />
-      
+      {todos.length === 0 ? (
+        <p>No tasks at this time. Try adding some!</p>
+      ) : (
       <ol>
+
         {todos.map(todo => (
           <Todo key={todo.id} {...todo} deleteTodo={deleteTodo} />
         ))}
-      </ol>
+      </ol>)}
       {/* <Counter />  */}
     </div>
     <Footer />
