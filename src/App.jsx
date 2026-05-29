@@ -9,11 +9,15 @@ import Footer from './footer.jsx'
 import UserCard from './UserCard.jsx'
 import Todo from './todo.jsx'
 // import Counter from './count.jsx'
-
+import { useState } from "react";
 
 function App() {
   // const [count, setCount] = useState(0)
-
+const [todos, setTodos] = useState([
+  { id: 1, task: "Learn React", priority: "high", completed: false },
+  { id: 2, task: "Touch Grass", priority: "low", completed: false },
+  { id: 3, task: "Learn React", priority: "high", completed: false }
+])
   return (
     <>
     <Header />
@@ -25,9 +29,11 @@ function App() {
       <WelcomeMessage />
       <UserCard name="Daniel" role="Developer" />
       <UserCard name="Heather" role="Loving Wife" />
+      
       <ol>
-        <Todo task="Finish React project" priority="High" completed={false} />
-        <Todo task="Get a job as a web developer" priority="High" completed={false} />
+        {todos.map(todo => (
+          <Todo key={todo.id} {...todo} />
+        ))}
       </ol>
       {/* <Counter />  */}
     </div>
