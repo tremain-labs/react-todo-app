@@ -1,10 +1,10 @@
-import { useState } from "react";
-function Todo({task, priority, id, deleteTodo}){
+
+function Todo({task, priority, id, deleteTodo, toggleTodo, completed}) {
   
-  const [isdone, setDone] = useState(false)
+
   return ( 
   <>     
-        <li>{task} - Priority: {priority} - Completed Status: {isdone ? "✅" : "⬜"}<input type="checkbox" onClick={() => setDone(!isdone)} />
+        <li>{task} - Priority: {priority} - Completed Status: {completed ? "✅" : "⬜"}<input type="checkbox" checked={completed} onChange={() => toggleTodo(id)} />
         <button onClick={() => deleteTodo(id)}>Delete</button></li>
   </>     
   ); 
