@@ -7,9 +7,11 @@ import WelcomeMessage from './welcomeMessage.jsx'
 import Header from './header.jsx'
 import Footer from './footer.jsx'
 import UserCard from './UserCard.jsx'
-import Todo from './todo.jsx'
+
 // import Counter from './count.jsx'
 import { useState } from "react";
+import TodoList from './todoList.jsx';
+import EmptyState from './emptyState.jsx';
 
 function App() {
   // the todo state 
@@ -45,15 +47,13 @@ function toggleTodo(id) {
       <UserCard name="Daniel" role="Developer" />
       <UserCard name="Heather" role="Loving Wife" />
       {todos.length === 0 ? (
-        <p>No tasks at this time. Try adding some!</p>
+        <EmptyState />
       ) : (
-      <ol>
-
-        {todos.map(todo => (
-          <Todo key={todo.id} {...todo} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
-        ))}
-      </ol>)}
+          <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
+        )}
+      
       {todos.every(todo => todo.completed) && <p>All tasks completed!</p>}
+      
       
       {/* <Counter />  */}
     </div>
