@@ -54,6 +54,7 @@ function toggleTodo(id) {
       ) : (
           <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
         )}
+        {todos.every(todo => todo.completed) && <p>All tasks completed!</p>}
       <AddTodo addTodo={addTodo} />
       
       {/* <Counter />  */}
