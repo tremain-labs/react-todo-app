@@ -1,4 +1,4 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
@@ -9,7 +9,6 @@ import Footer from './footer.jsx'
 import UserCard from './UserCard.jsx'
 
 // import Counter from './count.jsx'
-import { useState } from "react";
 import TodoList from './todoList.jsx';
 import EmptyState from './emptyState.jsx';
 import AddTodo from './AddTodo.jsx';
