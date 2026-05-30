@@ -12,16 +12,17 @@ import UserCard from './UserCard.jsx'
 import { useState } from "react";
 import TodoList from './todoList.jsx';
 import EmptyState from './emptyState.jsx';
+import AddTodo from './AddTodo.jsx';
 
 function App() {
   // the todo state 
 const [todos, setTodos] = useState([
-  { id: 1, task: "Learn React", priority: "high", completed: false },
-  { id: 2, task: "Touch Grass", priority: "low", completed: false },
-  { id: 3, task: "Learn React", priority: "high", completed: false },
-  { id: 4, task: "Eat", priority: "high", completed: false },
-  { id: 5, task: "Sleep", priority: "high", completed: false },
-  { id: 6, task: "Code", priority: "high", completed: false }
+  // { id: 1, task: "Learn React", priority: "high", completed: false },
+  // { id: 2, task: "Touch Grass", priority: "low", completed: false },
+  // { id: 3, task: "Learn React", priority: "high", completed: false },
+  // { id: 4, task: "Eat", priority: "high", completed: false },
+  // { id: 5, task: "Sleep", priority: "high", completed: false },
+  // { id: 6, task: "Code", priority: "high", completed: false }
 ])
 
 // filtering the completed tasks
@@ -33,7 +34,9 @@ function deleteTodo(id) {
 function toggleTodo(id) {
         setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo))
       }
-
+      function addTodo(task) {
+  setTodos([...todos, { id: Date.now(), task: task, priority: "low", completed: false }])
+}
 
   return (
     <>
@@ -51,9 +54,7 @@ function toggleTodo(id) {
       ) : (
           <TodoList todos={todos} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
         )}
-      
-      {todos.every(todo => todo.completed) && <p>All tasks completed!</p>}
-      
+      <AddTodo addTodo={addTodo} />
       
       {/* <Counter />  */}
     </div>
