@@ -16,14 +16,7 @@ import AddTodo from './AddTodo.jsx';
 
 function App() {
   // the todo state 
-const [todos, setTodos] = useState([
-  // { id: 1, task: "Learn React", priority: "high", completed: false },
-  // { id: 2, task: "Touch Grass", priority: "low", completed: false },
-  // { id: 3, task: "Learn React", priority: "high", completed: false },
-  // { id: 4, task: "Eat", priority: "high", completed: false },
-  // { id: 5, task: "Sleep", priority: "high", completed: false },
-  // { id: 6, task: "Code", priority: "high", completed: false }
-])
+const [todos, setTodos] = useState([])
 
 // filtering the completed tasks
 const completedTasks = todos.filter(todo => todo.completed)
