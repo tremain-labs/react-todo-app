@@ -27,7 +27,7 @@ function deleteTodo(id) {
 function toggleTodo(id) {
         setTodos(todos.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo))
       }
-      function addTodo(task) {
+function addTodo(task) {
   setTodos([...todos, { id: Date.now(), task: task, priority: "low", completed: false }])
 }
 
@@ -35,10 +35,6 @@ function toggleTodo(id) {
     <>
     <Header />
     <div>
-      
-      <h1>Hello, Daniel's React App!</h1>
-      <p>React is ready, let's go!</p>
-      <p>let's get started!</p>
       <WelcomeMessage />
       <UserCard name="Daniel" role="Developer" />
       <UserCard name="Heather" role="Loving Wife" />
